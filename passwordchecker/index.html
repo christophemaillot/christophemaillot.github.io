@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Password checker - online password analysis tool</title>
+        <meta name="description" content="A online opensource web tool that provides a comprehensive analysis of your passowrd, including (but not limited to) its strongness. Type your password and get immediat feebacks about it.">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/main.css">
+
+        <link rel="canonical" href="/passwordchecker/">
+
+    </head>
+
+    <body>
+
+        <div id="header">
+            <span id="home">
+                <i class="fa fa-home" aria-hidden="true"></i> <a href="https://www.christophemaillot.fr/">christophemaillot.fr</a>
+            </span>
+            <span id="twitter">
+                <i class="fa fa-twitter-square" aria-hidden="true"></i> <a href="https://twitter.com/f4hbz">f4hbz</a>
+            </span>
+        </div>
+        
+        <div id="container">
+            <h1 id="title"> Password Checker</h1>
+            <div id="description">Please type your password below. This script runs advanced server-side algorithms to provide valuable infos and stats about your password, including its strongness, and the licklyhood of hack.</div>
+            
+            <div>
+                <div><label for="pwd">Your password :</label></div>
+                <div><input name="pwd" id="pwd" type="password" /> <button id="submit" type="button" class="btn btn-primary">submit</button> </div>
+            </div>
+            
+            
+            <div id="result" style="display:none;">
+                <p>You've just submitted a password to a unknown, untrusted third party tool.
+                You can't tell what has been done to your password. It may have been recorded in the server database, along with your metadata, including your IP address.</p>
+                <p>This password is not secured anymore, you must consider it has public.</p>
+                
+                <p><em>Don't use online password checkers, they are bad.</em></p>
+                
+                    
+                    
+            </div>
+        </div>
+        
+        
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function() {
+                $("#submit").click(function() {
+                    $("#submit").html("<i class='fa fa-spinner fa-spin ' /> submitting ...");
+                    $("#result").hide();
+        
+                    window.setTimeout(function() {
+                        $("#submit").html("submit");
+                        $("#result").show();
+                    }, 2000);
+                });
+            });
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-82639311-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>
